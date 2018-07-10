@@ -30,9 +30,27 @@ let todoList = {
         todo.completed = !todo.completed;
         this.displayTodos();
     },
+    toggleAll: function () {
+        let totalTodos = this.todos.length;
+        let completedTodos = 0;
+        for (var i = 0; i < totalTodos; i++) {
+            if (this.todos[i].completed === true) {
+                completedTodos++
+            }
+        }
+        if (completedTodos === totalTodos) {
+            for (var i = 0; i < totalTodos; i++) {
+                this.todos[i].completed = false;
+            }
+        } else {
+            for (var i = 0; i < totalTodos; i++) {
+                this.todos[i].completed = true;
+            }
+        }
+        this.displayTodos();
+    },
     deleteTodo: function (position) {
         this.todos.splice(position, 1);
         this.displayTodos();
     }
 };
-
