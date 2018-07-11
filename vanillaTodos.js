@@ -54,3 +54,15 @@ let todoList = {
         this.displayTodos();
     }
 };
+
+let displayTodosButton = document.getElementById('displayTodosButton');
+let toggleAllButton = document.getElementById('toggleAllButton');
+
+displayTodosButton.addEventListener('click', function () {
+    todoList.displayTodos()
+});
+
+toggleAllButton.addEventListener('click', function () {
+    todoList.toggleAll()
+});
+
